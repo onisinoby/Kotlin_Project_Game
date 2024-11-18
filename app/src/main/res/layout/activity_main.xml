@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@android:color/black">
 
     <ImageView
-        android:id = "@+id/mctank"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src = "@drawable/mctank"
-        />
+        android:id="@+id/myTank"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/mctank" />
+
+    <!-- Добавление Toolbar для отображения меню -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?attr/colorPrimary" />
 
 </FrameLayout>
