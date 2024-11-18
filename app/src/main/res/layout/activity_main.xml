@@ -1,22 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/container"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black">
 
-    <ImageView
-        android:id="@+id/myTank"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:src="@drawable/mctank" />
-
-    <!-- Добавление Toolbar для отображения меню -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"/>
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/myTank"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/mctank" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"/>
+
+        <LinearLayout
+            android:id="@+id/materials_container"
+            android:layout_width="wrap_content"
+            android:layout_height="297dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:elevation="4dp">
+
+            <ImageView
+                android:id="@+id/editor_clear"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_clear" />
+
+            <ImageView
+                android:id="@+id/editor_brick"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/brick" />
+
+            <ImageView
+                android:id="@+id/editor_concrete"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/concrete" />
+
+            <ImageView
+                android:id="@+id/editor_grass"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/grass" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 </FrameLayout>
+
+

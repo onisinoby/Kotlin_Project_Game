@@ -8,7 +8,10 @@ import android.view.KeyEvent.*
 import android.widget.FrameLayout
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 
 const val CELL_SIZE = 25
@@ -18,6 +21,7 @@ const val VERTICAL_MAX_SIZE = CELL_SIZE * VERTICAL_CELL_AMOUNT
 const val HORIZONTAL_MAX_SIZE = CELL_SIZE * HORIZONTAL_CELL_AMOUNT
 
 class MainActivity : AppCompatActivity() {
+    private var editMode = false
 
     private val gridDrawer by lazy {
         GridDrawer(this)
@@ -46,11 +50,23 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.menu_settings -> {
-                gridDrawer.drawGrid()
+                switchEditMode()
                 return true
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun switchEditMode() {
+        val materials_container: LinearLayout = findViewById(R.id.materials_container)
+        if (editMode) {
+            gridDrawer.removeGrid()
+            materials_container.visibility = GONE
+        } else {
+            gridDrawer.drawGrid()
+            materials_container.visibility = VISIBLE
+        }
+        editMode = !editMode
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
