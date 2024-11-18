@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/myTank"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:src="@drawable/mctank" />
 
     <!-- Добавление Toolbar для отображения меню -->
@@ -16,6 +16,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="?attr/colorPrimary" />
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"/>
 
 </FrameLayout>

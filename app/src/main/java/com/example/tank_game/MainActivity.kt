@@ -11,9 +11,9 @@ import android.view.MenuItem
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
-const val CELL_SIZE = 50
-const val VERTICAL_CELL_AMOUNT = 45
-const val HORIZONTAL_CELL_AMOUNT = 19
+const val CELL_SIZE = 25
+const val VERTICAL_CELL_AMOUNT = 89
+const val HORIZONTAL_CELL_AMOUNT = 38
 const val VERTICAL_MAX_SIZE = CELL_SIZE * VERTICAL_CELL_AMOUNT
 const val HORIZONTAL_MAX_SIZE = CELL_SIZE * HORIZONTAL_CELL_AMOUNT
 
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         val mctank: ImageView = findViewById(R.id.myTank)
         val layoutParams = mctank.layoutParams as FrameLayout.LayoutParams
-        (mctank.layoutParams as FrameLayout.LayoutParams).topMargin += 100
+        (mctank.layoutParams as FrameLayout.LayoutParams).topMargin += 125
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         when (direction) {
             Direction.UP -> {
                 mctank.rotation = 0f
-                if (layoutParams.topMargin > 0) {
+                if (layoutParams.topMargin > 125) {
                     (mctank.layoutParams as FrameLayout.LayoutParams).topMargin += -CELL_SIZE
                 }
             }
